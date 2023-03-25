@@ -10,8 +10,7 @@ const CryptoScam = () => {
         redirect: "follow",
       };
       const response = await fetch(
-        "https://api.cryptoscamdb.org/v1/featured",
-        requestOptions
+
       );
       const json = await response.json();
       setScamList(json);
