@@ -29,7 +29,7 @@ function App() {
       
       setFilteredResults(Object.keys(lists.Data));
       console.log(filteredResults);
-      
+
     }
   };
 
@@ -62,8 +62,21 @@ function App() {
 
         {
           lists && lists.length > 0 ? lists.map((item)=>{
-            // console.log(item.city)
-            return <li key={item.id}> {item.city}, {item.state} </li>
+            console.log(item)
+            const {id, brewery_type, city, country, name, phone, postal_code, state, street, website_url } = item;
+            return (
+              <li className="brew-block" key={id}>  
+                <h2> {name} </h2>
+                <h3> Brewery type: {brewery_type} </h3>
+                <p> {street} </p>
+                <p> {city}, {state} </p>
+                <p> {postal_code} </p>
+
+                <p> {phone} </p>
+                <p> {website_url }</p>
+              </li>
+            )
+
           }) : null
         }
 

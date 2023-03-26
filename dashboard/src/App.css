@@ -3,7 +3,8 @@
 }
 
 body {
-  background-color: black;
+  background-color: #e5f5f9;
+  color: #222;
 }
 
 .icons {
@@ -21,14 +22,16 @@ ul {
 }
 li.main-list{
   padding: 25px;
-  border-bottom: solid 3px white;
+  border-bottom: solid 3px #e5f5e0;
   font-size: larger;
+  
+}
+li {
+  color: #e5f5e0;
 }
 .whole-page {
   padding: 25px;
   text-align: center;
-  background: black;
-  color: white;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
@@ -41,15 +44,6 @@ margin-left: 75px;
 .sidenav {
   min-height: 90vh;
   width: 100%;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  background-color: #232323;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 10px;
-  padding-right: 10px; */
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
@@ -58,4 +52,15 @@ margin-left: 75px;
 
 input {
   padding: 0.75rem 1.75rem;
+  background-color: #99d8c9;
+  border: 1px solid #2ca25f;
+  border-radius: 5px;
+}
+
+.brew-block {
+  background-color: #2ca25f ;
+  margin-bottom: 1rem;
+  padding: 1rem 5px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
