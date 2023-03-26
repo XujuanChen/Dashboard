@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import SideNav from "./Components/sideNav";
 import Breweries from "./Components/Breweries";
 
 function App() {
@@ -13,24 +12,7 @@ function App() {
   const [searchInput, setSearchInput] = useState("");
 
   const searchItems = (searchValue) => {
-    setSearchInput(searchValue);
-    if (searchValue !== "") {
-      const filteredData = Object.keys(lists.Data).filter((item) =>
-        Object.values(item)
-          .join("")
-          .toLowerCase()
-          .includes(searchValue.toLowerCase())
-      );
-      
-      setFilteredResults(filteredData);
-      console.log(filteredResults);
 
-    } else {
-      
-      setFilteredResults(Object.keys(lists.Data));
-      console.log(filteredResults);
-
-    }
   };
 
   useEffect(() => {
@@ -51,13 +33,37 @@ function App() {
     <div className="whole-page">
       <Breweries />
 
-      <div>
-      <h1>My List</h1>
+      <div className="main-container">
+        <div className="display-container">
+        <div className="display-box">
+        🌞
+          <h2>display  display 1</h2>
+        </div>
+
+        <div className="display-box">
+        🌞
+          <h2>display  display 2</h2>
+        </div>
+
+        <div className="display-box">
+        🌞
+          <h2>display  display 3</h2>
+        </div>
+
+        </div>
+      <h1>Brewery Company List</h1>
+      <h2>Search for breweries by name:</h2>
+      <form action="">
       <input
         type="text"
         placeholder="Search..."
         onChange={(inputString) => searchItems(inputString.target.value)}
       />
+
+      <button type="button">Search</button>
+
+      </form>
+
       <ul>
 
         {
@@ -68,12 +74,10 @@ function App() {
               <li className="brew-block" key={id}>  
                 <h2> {name} </h2>
                 <h3> Brewery type: {brewery_type} </h3>
-                <p> {street} </p>
-                <p> {city}, {state} </p>
-                <p> {postal_code} </p>
-
-                <p> {phone} </p>
-                <p> {website_url }</p>
+                <p> Address: {street} </p>
+                <p> {city}, {state}, {postal_code} </p>
+                <p> 📞: {phone} </p>
+                <p> 🌐: {website_url }</p>
               </li>
             )
 

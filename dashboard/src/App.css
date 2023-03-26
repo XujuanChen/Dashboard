@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #e5f5f9;
+  background-color: #99d8c9;
   color: #222;
 }
 
@@ -15,10 +15,7 @@ body {
 
 ul {
   list-style: none;
-  margin-top: 25px;
-  margin-bottom: 75px;
-  margin-left: 50px;
-  margin-right: 30px;
+  margin: 1rem 3rem 1rem 1rem;
 }
 li.main-list{
   padding: 25px;
@@ -33,7 +30,8 @@ li {
   padding: 25px;
   text-align: center;
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 300px 2fr;
+  gap: 2rem;
 }
 
 .tab {
@@ -44,17 +42,29 @@ margin-left: 75px;
 .sidenav {
   min-height: 90vh;
   width: 100%;
-  overflow-y: scroll;
-  display: flex;
-  flex-direction: column;
   align-items: center;
+
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  z-index: 3;
+  backdrop-filter: blur(0.75rem);
+
+}
+
+.main-container {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3));
+  border-radius: 2rem;
+  z-index: 3;
+  backdrop-filter: blur(0.75rem);
 }
 
 input {
   padding: 0.75rem 1.75rem;
+  margin-right: 10px;
   background-color: #99d8c9;
   border: 1px solid #2ca25f;
   border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
 
 .brew-block {
@@ -63,4 +73,31 @@ input {
   padding: 1rem 5px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  min-width: 160px;
+  background-color: #2ca25f;
+  border: 1px solid #2ca25f;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  font-size: larger;
+}
+
+.display-container {
+  display: flex;
+  place-content: center;
+  min-width: 400px;
+  min-height: 240px;
+}
+
+.display-box {
+  background-color: #2ca25f;
+  margin:2rem;
+  padding: 1rem 2rem;
+  color: #e5f5e0;
+  border: none;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }

@@ -18,11 +18,22 @@ const Breweries = () => {
 
   return (
     <div className="sidenav">
-      <h1>Brew list</h1>
+     <h1>🧋BreweryDash</h1>
+
+      <button> 🏠 Dashboard </button>
+      <br />
+      <br />
+      <button> 🔎 Search </button>
+      <br />
+      <br />
+      <button> 🧐 About </button>
      <ul>
       {
         brews && brews.length >0 ? brews.map((item)=>{
-          return <li key={item.id}> {item.city} </li>
+          return( 
+          <li key={item.id} style={{color:"black"}}> 
+            {item.city} 
+          </li>)
         }) : null
       }
 
