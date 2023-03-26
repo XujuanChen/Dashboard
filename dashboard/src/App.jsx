@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import SideNav from "./Components/sideNav";
-import ListBreweries from "./Components/ListBreweries";
+import Breweries from "./Components/Breweries";
 
 function App() {
   const mySecret = import.meta.env.VITE_API_KEY;
@@ -15,15 +15,21 @@ function App() {
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
     if (searchValue !== "") {
-      const filteredData = Object.keys(list.Data).filter((item) =>
+      const filteredData = Object.keys(lists.Data).filter((item) =>
         Object.values(item)
           .join("")
           .toLowerCase()
           .includes(searchValue.toLowerCase())
       );
+      
       setFilteredResults(filteredData);
+      console.log(filteredResults);
+
     } else {
-      setFilteredResults(Object.keys(list.Data));
+      
+      setFilteredResults(Object.keys(lists.Data));
+      console.log(filteredResults);
+      
     }
   };
 
@@ -43,13 +49,14 @@ function App() {
 
   return (
     <div className="whole-page">
-      <SideNav />
+      <Breweries />
 
       <div>
       <h1>My List</h1>
       <input
         type="text"
         placeholder="Search..."
+        onChange={(inputString) => searchItems(inputString.target.value)}
       />
       <ul>
 
@@ -61,7 +68,6 @@ function App() {
         }
 
       </ul>
-
       </div>
     </div>
   );
