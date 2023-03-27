@@ -25,6 +25,7 @@ li.main-list{
 }
 li {
   color: #e5f5e0;
+  list-style: none;
 }
 .whole-page {
   padding: 25px;
@@ -65,39 +66,97 @@ input {
   border: 1px solid #2ca25f;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  color: black;
 }
 
-.brew-block {
+.brew-list {
   background-color: #2ca25f ;
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
   padding: 1rem 5px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+.alignleft {
+  text-align: left;
+  padding-left: 60px;
+  color: white;
+}
 
-button {
-  padding: 0.5rem 1rem;
-  min-width: 160px;
-  background-color: #2ca25f;
-  border: 1px solid #2ca25f;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  font-size: larger;
+.spn-bold {
+  font-weight: bold;
 }
 
 .display-container {
   display: flex;
   place-content: center;
   min-width: 400px;
-  min-height: 240px;
+  min-height: 200px;
 }
 
 .display-box {
   background-color: #2ca25f;
   margin:2rem;
-  padding: 1rem 2rem;
+  padding: 0 1rem 1rem 1rem;
   color: #e5f5e0;
   border: none;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+
+
+
+/* button  CSS */
+.btn {
+  min-width: 140px;
+}
+.button-3 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.button-3:hover {
+  background-color: #2c974b;
+}
+
+.button-3:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.button-3:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.button-3:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
 }

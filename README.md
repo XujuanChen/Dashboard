@@ -1,10 +1,10 @@
-# Web Development Project 5 - *Name of App Here*
+# Web Development Project 5 - *Brewery Company*
 
-Submitted by: **Your Name Here**
+Submitted by: **Xujuan Chen**
 
-This web app: **insert description**
+This web app: **Search the Brewery Company by the search bar that allows users to find the Brewery list.**
 
-Time spent: **X** hours spent in total
+Time spent: **10** hours spent in total
 
 ## Required Features
 
@@ -14,8 +14,8 @@ The following **required** functionality is completed:
 - [x] **Data uses the useEffect React hook and async/await syntax**
 - [ ] **The app dashboard includes at least three summary statistics about the data such as**
 - [ ] *insert details*
-- [ ] **A search bar allows the user to search for an item in the fetched data**
-- [ ] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
+- [X] **A search bar allows the user to search for an item in the fetched data**
+- [X] **Multiple different filters (2+) allow the user to filter items in the database by specified categories**
 
 The following **optional** features are implemented:
 
@@ -46,7 +46,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2023] [Xujuan Chen]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
