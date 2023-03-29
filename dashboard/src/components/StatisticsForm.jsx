@@ -37,7 +37,7 @@ const StatisticsForm = ({ lists }) => {
         <h2>There are {largeBrew.length} Large Brewery:</h2>
         {
           largeBrew.map((c)=>{
-            return <li>{c.name}, {c.postal_code}</li>
+            return <li>{c.name.substring(2)}, {c.postal_code.substring(0,5)}</li>
           })
         }
       </div>
