@@ -12,7 +12,7 @@ function App() {
     const fetchAllData = async () => {
       const response = await fetch("https://api.openbrewerydb.org/breweries");
       const json = await response.json();
-      console.log(json);
+      //console.log(json);
       if (json && json.length > 0) {
         setLists(json);
       } else {
@@ -24,19 +24,33 @@ function App() {
 
   const searchItems = (searchValue) => {
     setSearchInput(searchValue);
-    if (searchValue !== "") {
-      let fdata = lists.filter((item) => {
-        return (
-        item.city.toLowerCase().includes(searchValue.toLowerCase()) || 
-        item.state.toLowerCase().includes(searchValue.toLowerCase()) ||
-        item.brewery_type.toLowerCase().includes(searchValue.toLowerCase())
-        )});
-      //console.log("fdata", fdata);
-      setFilteredResults(fdata);
-    } else {
-      setFilteredResults(lists);
-    }
+
+    let fdata = lists.filter((item) => {
+      return (
+      item.city.toLowerCase().includes(searchValue.toLowerCase()) || 
+      item.state.toLowerCase().includes(searchValue.toLowerCase())
+      )});
+    //console.log("fdata", fdata);
+    setFilteredResults(fdata);
+
   };
+
+  const handleSelect = (e) => {
+    let value = e.target.value;
+    if(value === "all") {
+      const newList = [...lists];
+      setFilteredResults(newList);
+    } else {
+      const newList = [...lists];
+      let selectItems = newList.filter((item)=>{
+        return item.brewery_type.toLowerCase() === value
+      })
+      console.log(selectItems)
+      setFilteredResults(selectItems);
+    }
+  }
+
+  
   //console.log("filteredresults", filteredResults);
 
   // 1234567890 => (123) 456-7890
@@ -62,11 +76,17 @@ function App() {
           placeholder="Search..."
           onChange={(e) => searchItems(e.target.value)}
         />
+        <select className="brewselect" id="brewId" onChange={handleSelect} >
+          <option value="all">All</option>
+          <option value="micro">Micro</option>
+          <option value="large">Large</option>
+          <option value="brewpub">Brewpub</option>
+        </select>
         <button type="button" className="button-3">
           Search
         </button>
         <ul>
-          {searchInput.length > 0
+          {searchInput.length > 0 || filteredResults.length > 0
             ? filteredResults.map((item) => {
                 const {
                   id,
@@ -93,7 +113,7 @@ function App() {
                   </li>
                 );
               })
-            : lists.map((item) => {
+            : lists ? lists.map((item) => {
                 const {
                   id,
                   brewery_type,
@@ -113,8 +133,8 @@ function App() {
                     <span className="spn-bold">Address: </span> 
                     {street}, {city}, {state}, {postal_code}
                   </li>
-                );
-              })}
+                ) 
+              }): <p>loading</p>}
         </ul>
       </div>
     </div>

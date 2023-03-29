@@ -6,7 +6,7 @@ const StatisticsForm = ({ lists }) => {
   const newyork = [];
   const largeBrew = [];
 
-  lists.map((item)=>{
+  lists?lists.map((item)=>{
       brewtype.add(item.brewery_type);
       if (item.state_province === "New York") {
         newyork.push(item);
@@ -15,7 +15,7 @@ const StatisticsForm = ({ lists }) => {
       if (item.brewery_type === "large") {
         largeBrew.push(item)
       }
-  })
+  }): null
 
   // console.log(brewtype.size)
   // console.log(newyork)
@@ -27,8 +27,8 @@ const StatisticsForm = ({ lists }) => {
       <div className="display-box">
         <h2>{brewtype.size} Brewery types:</h2>
         {
-          Array.from(brewtype).map((type)=>{
-            return <li>{type}</li>
+          Array.from(brewtype).map((type, index)=>{
+            return <li key={index}>{type}</li>
           })
         }
       </div>
@@ -44,10 +44,10 @@ const StatisticsForm = ({ lists }) => {
 
       <div className="display-box">
         <h2>New York</h2>
-        <h3>has {newyork.length} Brewry</h3>
+        <h3>has {newyork.length} Brewery</h3>
         {
           newyork.map((c)=>{
-            return <li>{c.name}</li>
+            return <li key={c.id}>{c.name}</li>
           })
         }
       </div>
